@@ -1,0 +1,77 @@
+---
+title: "Brewing Data Cup 2020"
+author: 
+  - "Eduardo Trujillo"
+  - "Javier Velazquez"
+output:
+  revealjs::revealjs_presentation:
+    theme: league
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source("PROGRAM.R")
+```
+
+## Schedule
+
+a. Results
+
+b. Map
+
+
+## Results
+
+## Result 1
+
+```{r, echo=FALSE,fig.height=3.1, fig.width=10}
+library(DT)
+df <- read.csv(file = "C:/Users/actje/Desktop/HACKATHON/FILES/table.csv",
+               header = TRUE,
+               na.strings = "NA") %>% as.data.table()
+```
+
+```{r, echo=FALSE}
+
+datatable(data = df[,.N, by = "LABEL"], 
+            style = 'bootstrap', #theme of the datatable
+            filter = list(position = 'top', clear = FALSE),
+            options = list(
+              autoWidth = TRUE
+            )) 
+
+```
+
+## Result 2
+
+```{r, echo=FALSE}
+
+datatable(data = df[,sum(VOL_ENTREGA), by = "LABEL"], 
+            style = 'bootstrap', #theme of the datatable
+            filter = list(position = 'top', clear = FALSE),
+            options = list(
+              autoWidth = TRUE
+            )) 
+
+```
+
+## MAP
+
+```{r, echo=FALSE}
+df <- read.csv(file = "C:/Users/actje/Desktop/HACKATHON/FILES/table.csv",
+               header = TRUE,
+               na.strings = "NA") %>% as.data.table()
+
+library(dplyr) ; library(htmlwidgets) ; library(leaflet) ; library(leaflet.extras)
+map_generator(df = df,
+                         lng = -100,
+                         lat = 22.5,
+                         lng1 = -117.12776,
+                         lng2 = -86.811982388,
+                         lat1 = 14.5388286402,
+                         lat2 = 32.72083)
+```
+
+
+## Thanks !
