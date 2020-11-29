@@ -12,7 +12,7 @@ Pre - Modeling | Train the Model
 ------------ | -------------
 Desagregate Data. | Define the scale Variables.
 For Frequency greater to 1 multiply by variation coefficient. | Apply K-means algorithm adjusted.
-Define variable as de minimum euclidean distances with Lat and Long | Recursivly adjust diferent minimum euclidean distance for Id with frequency greater than 1.
+Define variable as de minimum Hartigan-Wong distances with Lat and Long | Recursivly adjust diferent minimum euclidean distance for Id with frequency greater than 1.
 
 <br>
 
