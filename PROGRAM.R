@@ -2,7 +2,6 @@ rm(list = ls())
 
 # Loading Required Information --------------------------------------------
 library(purrr)
-
 map(c("data.table", "dplyr", "stringr", 
       "ggplot2", "plotly", "tidyr", "glue", "rvest", "tidygeocoder", 
       "leaflet", "leaflet.extras", "randomcoloR", "DiagrammeR"), require, 
